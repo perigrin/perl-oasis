@@ -1,0 +1,77 @@
+Perl Oasis 2009
+===============
+
+Perl Oasis will be a one-day workshop at in Orlando on Saturday, January 17,
+2009. It is modeled on last year's Frozen Perl Workshop, which was in turn
+modeled on the Pittsburgh Perl Workshop, London Workshop and other European
+events. We (at a very rough guess) are expecting anywhere from 60-150 people.
+The early bird registration rate will be 10 for students, and 20 for everyone
+else. This will double approximately 3 weeks before the workshop.
+
+The workshop is being organized by the Orlando Perl Mongers. We are working
+with HD Publishing Group who are Gold Level Sponsors.
+
+We have already reserved the [??? VENUE ] as our venue ([??? VENUE URL]). The
+total cost for this venue, (without catering) is [??? VENUE COST]. AV
+Equipment and Services will be provided by HD Publishing who have generously
+loaned us two High Definition LCD projectors.
+
+We are also considering a hackathon for the Sunday after the workshop. This
+will most likely be at the same Venue. The cost for renting a room for the
+entire day is $75, We have not yet committed to the hackathon.
+
+At the Ramada we have secure a group rate of $75 USD / night and a current
+block of 10 rooms. Because the Ramada is also our venue this is by far the
+most convent option, as we get a better assessment of our local vs. remote
+attendee breakdown we will branch out to the other hotels in the area.
+
+Without the AV costs our registration feels should be more than adequate
+covers our expenses. We can apply the remaining sponsorship money to catering
+costs. The catering costs are expected to be $33.00 USD / person and include a
+lunch with beverages and an attendee dinner
+
+We expect to be able to cover our venue costs entirely from registration fees.
+Given 65 non-students at $20 and 15 students at $10 each that would be $1,450,
+enough to pay for the venue.
+
+So far we have already secured $2,500 in sponsorship commitments. I expect us
+to be able to raise at least $3,000 in sponsorship, which should allow us to
+provide some additional catering, as mentioned above. 
+
+Budget Expenses 
+----------------
+
+Listed in order in which they will receive funding:
+
+    * Venue: [??? VENUE COST] - this is the only required item
+    * Advertising: $100 (est)
+    * Lunch & Dinner: $2,400 (est)
+    * Morning beverages: $160 (est)
+    * Afternoon beverages: $160 (est)
+    * Hackathon room: $75
+
+Advertising costs are primarily for things like printing flyers. $100 may be a
+gross overestimate, but it gives us some wiggle room.
+
+Obviously, the catering costs will vary based on the number of attendees, and
+there is some flexibility based on what exact food we purchase. The numbers
+above are all based on a figure of 80 attendees.
+
+There are also some additional expenses that are flexible, in that they can be
+funded at various levels. These include buying some drinks and/or food at a
+Saturday night social event, food and beverages for the Hackathon, drinks
+and/or food for a Friday night speaker & organizer's dinner.
+
+These are all way down on the funding priority list, and will only get funding
+if we have money "left over". 
+
+Income
+------
+
+    * Registration fees: $1,450 (65 non-students, 15 students, all early bird)
+    * Sponsorship: $Everything else
+
+As you can see from our budget, the event is very conservative financially,
+since we could cover costs with no sponsorship, and we already have a
+commitment of $2,500, putting else well into the black before we've even
+started.
