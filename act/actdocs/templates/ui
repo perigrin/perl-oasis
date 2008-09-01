@@ -28,10 +28,11 @@
 
 <style type="text/css">
 /*<![CDATA[*/
+html {             margin-left: 250px !important;}
         body { 
             color: silver !important;
             background-color: black !important; 
-            background-image: url(../images/perl_oasis.jpg) !important;
+            background-image: url([% make_uri_info('img', 'perl_oasis.jpg')%]) !important;
             background-repeat: no-repeat !important;
             background-attachment: fixed !important;
         }
@@ -40,11 +41,11 @@
         a { color: silver !important;}
         h2 a  { text-decoration: none !important;}
         h2 a:hover  { text-decoration: underline !important;}
+        
         #menu li { list-style: none;}
         #menu h2, #menu ul { margin-top: 0ex; margin-bottom: 0px;}        
 /*]]>*/
 </style>
-
 <!-- Favorite icon -->
 <link rel="shortcut icon" type="image/png" href="/favicon.png" />
 </head>
