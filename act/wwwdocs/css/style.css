@@ -35,3 +35,7 @@ body {
 	font-size: 80%;
 	text-align: right;
 }
+
+th { 	
+	background-color: black;
+}

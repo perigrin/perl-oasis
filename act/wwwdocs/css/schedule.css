@@ -1,44 +1,49 @@
 /*~------------------------------------------------------------------*/
 /* Timetable colours                                                 */
 /*~------------------------------------------------------------------*/
+th { 	
+	background-color: silver;
+	color: black;
+}
+
 .header {
-color: inherit;
-background-color: Silver;
+color: silver;
+background-color: black;
 vertical-align: top;
 }
 .venue {
-color: inherit;
-background-color: #FFCC00;
+color: #FFCC00;
+background-color: black;
 vertical-align: top;
 }
-.out {
-color: inherit;
-background-color: #EEEEEE;
+.out, .out a {
+color: #EEEEEE !important;
+background-color: black;
 vertical-align: top;
 }
-.r1 {
-color: inherit;
-background-color: #FFD3D3;
+.r1, .r1 a {
+color: #FFD3D3 !important;
+background-color: black;
 vertical-align: top;
 }
-.r2 {
-color: inherit;
-background-color: #D3FFD3;
+.r2, .r2 a {
+color: #D3FFD3;
+background-color: black;
 vertical-align: top;
 }
-.r3 {
-color: inherit;
-background-color: #D3D3FF;
+.r3, .r3 a {
+color: #D3D3FF;
+background-color: black;
 vertical-align: top;
 }
-.r4 {
-color: inherit;
-background-color: #FFFFD3;
+.r4, .r4 a {
+color: #FFFFD3;
+background-color: black;
 vertical-align: top;
 }
-.r5 {
-color: inherit;
-background-color: #D3FFFF;
+.r5, .r5 a {
+color: #D3FFFF;
+background-color: black;
 vertical-align: top;
 }
 .mtbutton {
