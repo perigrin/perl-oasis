@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="[% global.request.language %]" xml:lang="[% global.request.language %]">
+
+<head>
+<!-- Document Metadata -->
+<meta http-equiv="Content-Language" content="[% global.request.language %]" />
+
+[% IF openid %]
+<!-- OpenId -->
+<link rel="openid.server" href="[% global.request.base_url %][% make_uri('openid') %]" />
+[% END %]
+<!-- JavaScript sugar -->
+<script src="/js/jquery.js"></script>
+<script src="/js/act.js"></script>
+<!-- Atom news feed -->
+<link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]"
+      href="[% global.request.base_url %][% make_uri_info( 'atom', global.request.language ) %].xml" />
+[%- IF title -%]<title>[% title  %]</title>[%- END -%]
+
+<!-- CSS Stylesheets -->
+<link rel="stylesheet" href="[% make_uri_info('css', 'print.css') %]"  type="text/css" media="print" />
+<link rel="stylesheet" href="[% make_uri_info('css', 'screen.css') %]"  type="text/css" media="screen, projection" />
+<!--[if IE]><link rel="stylesheet" href="[% make_uri_info('css', 'ie.css') %]" type="text/css" media="screen, projection"><![endif]-->
+
+<link rel="stylesheet" type="text/css" href="[% make_uri_info('css', 'style.css') %]" />
+<link rel="stylesheet" type="text/css" href="[% make_uri_info('css', 'schedule.css') %]" />
+
+<style type="text/css">
+/*<![CDATA[*/
+html {             margin-left: 250px !important;}
+        body { 
+            color: silver !important;
+            background-color: black !important; 
+            background-image: url([% make_uri_info('img', 'perl_oasis.jpg')%]) !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
+        }
+        #content { font-size: 10pt !important; }
+        h1, h2, h3 { color: silver;}
+        a { color: silver !important;}
+        h2 a  { text-decoration: none !important;}
+        h2 a:hover  { text-decoration: underline !important;}
+        
+        #menu li { list-style: none;}
+        #menu h2, #menu ul { margin-top: 0ex; margin-bottom: 0px;}        
+/*]]>*/
+</style>
+<!-- Favorite icon -->
+<link rel="shortcut icon" type="image/png" href="/favicon.png" />
+</head>
+
+<body class="container">
+
+  <div id="header">
+      [%- IF title -%]<h1>[% title  %]</h1>[%- END -%]
+  </div>
+
+  <div id="menu" class="push-2 span-6">
+    [% PROCESS menu %]
+  </div>
+
+  <div id="content" class="span-15">
+    [% content %]
+  </div>
+
+  <div id="footer" class="span-24 last">
+    Copyright &copy; The Orlando Perl Mongers - Powered by <a href="http://act.mongueurs.net/">Act</a>
+  </div>
+
+</body>
+</html>

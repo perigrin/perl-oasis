@@ -1,0 +1,39 @@
+[% WRAPPER ui title = global.conference.name %]
+
+<p> The Perl Oasis is a day long conference focusing on practical applications
+of Perl. The conference is being organized by the <a
+href="http://orlando.pm.org">Orlando Area Perl Mongers</a> and is scheduled
+for January 17, 2009 in Orlando, FL.</p>
+
+<p>
+Watch this space for updates, or check the <a href="[% global.request.base_url %][% make_uri_info( 'atom', global.request.language ) %].xml">feed</a>.
+</p>
+
+[% news = global.news(3);
+   IF news.size > 2;
+     more = news.pop;
+   END;
+ %]
+
+[% IF news.size %]
+<h2>Latest News</h2>
+[% FOREACH item = news %]
+<div class="news-entry">
+ <h3 class="news-header">
+  <span class="news-date">[% date_format(item.datetime, 'date_short') %]</span>
+  <span class="news-title">[% item.title %]</span>
+ </h3>
+ <div class="news-text">
+  [% item.content %]
+ </div>
+</div>
+[% END %]
+[% END %]
+
+[% IF more %]
+<p>
+ <a href="[% make_uri('news') %]" class="news-link">Older announcements</a>
+</p>
+[% END %]
+
+[% END %]
