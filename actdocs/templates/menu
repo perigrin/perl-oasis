@@ -6,4 +6,8 @@
 [% PROCESS menus/events %]
 [% PROCESS menus/treasurer %]
 [% PROCESS menus/admin %]
+<<<<<<< HEAD:actdocs/templates/menu
 [% PROCESS menus/act_confs %]
+=======
+[% PROCESS menus/act_confs %]
+>>>>>>> 70fb3ad7bc14f32720ce2ff9e48f198662797d64:actdocs/templates/menu
