@@ -1,4 +1,4 @@
-Perl Oasis 2009
+Perl Oasis 2010
 ===============
 
 Perl Oasis will be a one-day workshop in Orlando on Saturday, January 17,
@@ -25,8 +25,10 @@ block of 10 rooms. Because the Ramada is also our venue this is by far the
 most convenient option, as we get a better assessment of our local vs. remote
 attendee breakdown we will branch out to the other hotels in the area.
 
-Without the AV costs our registration should be more than adequate to
-cover our venue expenses. We can apply the remaining sponsorship money to catering costs. The catering costs are expected to be $12.00 USD / person and include a beverage service and an attendee social event Saturday evening.
+Without the AV costs our registration should be more than adequate to cover
+our venue expenses. We can apply the remaining sponsorship money to catering
+costs. The catering costs are expected to be $12.00 USD / person and include a
+beverage service and an attendee social event Saturday evening.
 
 We expect to be able to cover our venue costs entirely from registration fees.
 Given 56 non-students at $20 and 24 students at $10 each that would be $1360,
