@@ -1,5 +1,6 @@
-/* GRIDS */
+/* **************** GRIDS ***************** */
 .line:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.lastUnit:after{content:" . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";visibility:hidden;clear:both;height:0 !important;display:block;line-height:0;}
 .line{*zoom:1;}
 .unit{float:left;}
 .size1of1{float:none;}
@@ -19,10 +20,12 @@
 .size5of6{width:83.33330%;}
 .lastUnit{display:table-cell;*display:block;*zoom:1;float:none;_position:relative;_left:-3px;_margin-right:-3px;width:auto;}
 /* Site Style */
-html{margin-left:250px;margin-right:50px;}
-body{color:black;background-color:silver;background-image:url(../img/perl_oasis.jpg);background-repeat:no-repeat;background-attachment:fixed;font-size:9pt;font-family:"Helvitica","Arial",sans-serif;}
+@font-face{font-family:Calluna Regular;src:url(Calluna-Regular.otf) format("opentype");}
+html{margin-right:50px;height:100%;}
+body{margin:0px;padding:0px;color:black;background-color:silver;font-size:9pt;font-family:"Verdana","Arial",sans-serif;height:100%;}
+.image{margin:0px;padding:0px;background-image:url(../img/perl_oasis.jpg);background-repeat:no-repeat;background-attachment:fixed;min-height:800px;height:100%;}
 h1{font-size:36pt;}
-h1,h2,h3{color:black;font-family:"Times","Times New Roman",serif;}
+h1,h2,h3{color:black;font-family:"Calluna Regular","Times","Times New Roman",serif;}
 a{color:black;}
 h2 a{text-decoration:none;}
 h2 a:hover{text-decoration:underline;}
