@@ -25,12 +25,12 @@
 </head>
 
 <body>
-	<div class="unit size1of3 image">&nbsp;</div>
-	<div class="unit size2of3">
+	<div class="unit size2of5 image">&nbsp;</div>
+	<div class="unit size3of5 lastUnit content">
   		<div id="header">[%- IF title -%]<h1>[% title  %]</h1>[%- END -%]</div>
   		<div id="menu" class="unit size1of5">[% PROCESS menu %]</div>
-  		<div id="content" class="unit size4of5">[% content %]</div>
-  		<div id="footer" class="unit size5of5">
+  		<div id="content" class="unit size4of5 lastUnit">[% content %]</div>
+  		<div id="footer">
 			Copyright &copy; The Orlando Perl Mongers - Powered by <a href="http://act.mongueurs.net/">Act</a>
   		</div>
 	</div>

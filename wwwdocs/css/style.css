@@ -14,23 +14,23 @@
 .size3of5{width:60%;}
 .size4of5{width:80%;}
 .size1of6{width:16.66666%;}
-.size2of6{width:33.33332%;}
 .size3of6{width:49.99998%;}
-.size4of6{width:66.66664%;}
 .size5of6{width:83.33330%;}
 .lastUnit{display:table-cell;*display:block;*zoom:1;float:none;_position:relative;_left:-3px;_margin-right:-3px;width:auto;}
 /* Site Style */
 @font-face{font-family:Calluna Regular;src:url(Calluna-Regular.otf) format("opentype");}
-html{margin-right:50px;height:100%;}
-body{margin:0px;padding:0px;color:black;background-color:silver;font-size:9pt;font-family:"Verdana","Arial",sans-serif;height:100%;}
-.image{margin:0px;padding:0px;background-image:url(../img/perl_oasis.jpg);background-repeat:no-repeat;background-attachment:fixed;min-height:800px;height:100%;}
+html{height:100%;}
+body{margin:0px;padding:0px;height:100%;color:black;background-color:silver;font-size:9pt;font-family:"Helvetica","Helvetica","Arial",sans-serif;}
+.content{padding:0px 1ex;width:58.84374%;min-width:600px;}
+.image{overflow:hidden;background-image:url(../img/perl_oasis.jpg);background-repeat:no-repeat;background-attachment:fixed;min-height:800px;height:100%;}
 h1{font-size:36pt;}
-h1,h2,h3{color:black;font-family:"Calluna Regular","Times","Times New Roman",serif;}
+h1,h2,h3{color:black;font-family:"Calluna Regular","Times","Times New Roman",serif; margin-top:0px;}
 a{color:black;}
 h2 a{text-decoration:none;}
 h2 a:hover{text-decoration:underline;}
 #menu li{list-style:none;font-size:8pt;}
 #menu h2,#menu ul{margin-top:0px;margin-bottom:1ex;}
+#menu { margin-right: 1ex;}
 /* Schedule */
 th{background-color:silver;color:black;}
 .header{color:black;background-color:silver;vertical-align:top;}
