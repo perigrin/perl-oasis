@@ -1,10 +1,12 @@
-<h2> Conference </h2>
- <li> <a href="/opw2010/call_for_speakers.html">Call for Speakers</a></li>
- <li> <a href="/opw2010/venue">Venue</a></li>
 [% PROCESS menus/user %]
+
+<h2> Conference </h2>
+<li> <a href="call_for_speakers.html">Call for Speakers</a></li>
+<li> <a href="venue">Venue</a></li>
+<li> <a href="news">News</a> </li>
+<li> <a href="wiki">Wiki</a> </li>
+
 [% PROCESS menus/users %]
-[% PROCESS menus/news %]
-[% PROCESS menus/wiki %]
 [% PROCESS menus/talks %]
 [% PROCESS menus/events %]
 [% PROCESS menus/treasurer %]

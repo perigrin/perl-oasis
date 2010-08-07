@@ -1,5 +1,7 @@
 [% WRAPPER ui title = global.conference.name %]
 
+
+<h2> Welcome </h2> 
 <p> The Perl Oasis is a day long conference focusing on practical applications
 of Perl. The conference is being organized by the <a
 href="http://orlando.pm.org">Orlando Area Perl Mongers</a> and is scheduled
@@ -23,9 +25,9 @@ Watch this space for updates, or check the <a href="[% global.request.base_url %
   <span class="news-date">[% date_format(item.datetime, 'date_short') %]</span>
   <span class="news-title">[% item.title %]</span>
  </h3>
- <div class="news-text">
+ <p class="news-text">
   [% item.content %]
- </div>
+ </p>
 </div>
 [% END %]
 [% END %]

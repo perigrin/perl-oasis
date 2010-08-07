@@ -1,1 +1,1 @@
-<h2>[% content %]</h2>
+<li><h2>[% content %]</h2></li>

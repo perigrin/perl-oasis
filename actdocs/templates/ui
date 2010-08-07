@@ -11,8 +11,11 @@
 <link rel="openid.server" href="[% global.request.base_url %][% make_uri('openid') %]" />
 [% END %]
 <!-- JavaScript sugar -->
-<script src="/js/jquery.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script> 
+<script type="text/javascript" charset="utf-8" src='http://github.com/aristus/sweet-justice/raw/master/sweet-justice.min.js'></script> 
 <script src="/js/act.js"></script>
+
+
 <!-- Atom news feed -->
 <link rel="alternate" type="application/atom+xml" title="[% global.conference.name %]"
       href="[% global.request.base_url %][% make_uri_info( 'atom', global.request.language ) %].xml" />
@@ -25,14 +28,30 @@
 </head>
 
 <body>
-	<div class="unit size2of5 image">&nbsp;</div>
-	<div class="unit size3of5 lastUnit content">
-  		<div id="header">[%- IF title -%]<h1>[% title  %]</h1>[%- END -%]</div>
-  		<div id="menu" class="unit size1of5">[% PROCESS menu %]</div>
-  		<div id="content" class="unit size4of5 lastUnit">[% content %]</div>
-  		<div id="footer">
-			Copyright &copy; The Orlando Perl Mongers - Powered by <a href="http://act.mongueurs.net/">Act</a>
-  		</div>
-	</div>
+    <div class="header"><h1>Perl Oasis 2011</h1></div>
+    <div class="content">
+        <div class="unit size2of3 sweet-justice">[% content %]</div>
+    <div class="unit lastUnit"> 
+        [% PROCESS menu %]
+    </div> 
+    <div class="footer"> 
+        <p style="font-size: 8pt; font-weight: 400;"> 
+            Site Design by <a href="http://tamarou.com">Tamarou</a> &bull; Image by <a rel="cc:attributionURL" href="http://www.flickr.com/photos/lhutton/4743800369/">Leander Hutton</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a> 
+            &bull; Copyright &copy; The Orlando Perl Mongers &bull; Powered by <a href="http://act.mongueurs.net/">Act</a>
+        </p> 
+    </div>
+    </div>
 </body>
+</html>
+
+    <body> 
+        <div class="content"> 
+            <div class="unit size2of3 sweet-justice"> 
+
+
+            </div> 
+
+
+        </div> 
+    </body> 
 </html>
