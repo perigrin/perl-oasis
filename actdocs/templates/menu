@@ -1,14 +1,25 @@
 [% PROCESS menus/user %]
 
 <h2> Conference </h2>
+<li> <a href="sponsorship.html">Call for Sponsors</a></li>
 <li> <a href="call_for_speakers.html">Call for Speakers</a></li>
-<li> <a href="venue">Venue</a></li>
+<li> <a href="venue.html">Venue</a></li>
 <li> <a href="news">News</a> </li>
 <li> <a href="wiki">Wiki</a> </li>
+<li> <a href="training.html">Training</a> </li>
 
 [% PROCESS menus/users %]
 [% PROCESS menus/talks %]
 [% PROCESS menus/events %]
 [% PROCESS menus/treasurer %]
 [% PROCESS menus/admin %]
-[% PROCESS menus/act_confs %]
+[% PROCESS menus/sponsors %]
+<!-- [% PROCESS menus/act_confs %] -->
+
+<div class="footer"> 
+    <p style="font-size: 8pt; font-weight: 400;"> <a
+    href="colophon.html">Colophon</a><br/> Site Design by <a
+    href="http://tamarou.com">Tamarou</a> &bull; Copyright &copy; The
+    Orlando Perl Mongers &bull; Powered by <a
+    href="http://act.mongueurs.net/">Act</a> </p>
+</div>

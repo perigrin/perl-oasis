@@ -25,33 +25,30 @@
 <link rel="stylesheet" type="text/css" href="[% make_uri_info('css', 'style.css') %]" />
 <!-- Favorite icon -->
 <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-939082-11']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 
 <body>
-    <div class="header"><h1>Perl Oasis 2011</h1></div>
-    <div class="content">
-        <div class="unit size2of3 sweet-justice">[% content %]</div>
-    <div class="unit lastUnit"> 
-        [% PROCESS menu %]
+    <div class="header">
+        <h1><a href="[% global.request.base_url %][% make_uri('') %]">Perl Oasis 2011</a></h1> 
     </div> 
-    <div class="footer"> 
-        <p style="font-size: 8pt; font-weight: 400;"> 
-            Site Design by <a href="http://tamarou.com">Tamarou</a> &bull; Image by <a rel="cc:attributionURL" href="http://www.flickr.com/photos/lhutton/4743800369/">Leander Hutton</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a> 
-            &bull; Copyright &copy; The Orlando Perl Mongers &bull; Powered by <a href="http://act.mongueurs.net/">Act</a>
-        </p> 
-    </div>
+    <div class="content">
+        <div class="unit size3of5 sweet-justice">[% content %]</div>
+        <div class="unit lastUnit menu"> [% PROCESS menu %]</div> 
     </div>
 </body>
-</html>
-
-    <body> 
-        <div class="content"> 
-            <div class="unit size2of3 sweet-justice"> 
-
-
-            </div> 
-
-
-        </div> 
-    </body> 
 </html>

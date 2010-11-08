@@ -5,11 +5,11 @@
 <p> The Perl Oasis is a day long conference focusing on practical applications
 of Perl. The conference is being organized by the <a
 href="http://orlando.pm.org">Orlando Area Perl Mongers</a> and is scheduled
-for January 15, 2011 in Orlando, FL.</p>
+for January 14th &ndash; 16th, 2011 in Orlando, FL.</p>
 
-<p>
-Watch this space for updates, or check the <a href="[% global.request.base_url %][% make_uri_info( 'atom', global.request.language ) %].xml">feed</a>.
-</p>
+<p> Watch this space for updates, or check the <a href="[%
+global.request.base_url %][% make_uri_info( 'atom',
+global.request.language ) %].xml">feed</a>. </p>
 
 [% news = global.news(5);
    IF news.size > 2;
@@ -37,5 +37,6 @@ Watch this space for updates, or check the <a href="[% global.request.base_url %
  <a href="[% make_uri('news') %]" class="news-link">Older announcements</a>
 </p>
 [% END %]
+
 
 [% END %]
