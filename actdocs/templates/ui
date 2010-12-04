@@ -46,8 +46,8 @@
     <div class="header">
         <h1><a href="[% global.request.base_url %][% make_uri('') %]">Perl Oasis 2011</a></h1> 
     </div> 
-    <div class="content">
-        <div class="unit size3of5 sweet-justice">[% content %]</div>
+    <div class="page">
+        <div class="content sweet-justice">[% content %]</div>
         <div class="unit lastUnit menu"> [% PROCESS menu %]</div> 
     </div>
 </body>
