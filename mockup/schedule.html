@@ -1,24 +1,38 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
  
 <head> 
 <!-- Document Metadata --> 
-<meta http-equiv="Content-Language" content="en" />  <!-- OpenId --> 
-<link rel="openid.server" href="http://www.perloasis.info/opw2011/openid" />  <!-- JavaScript sugar --> 
-<script src="js/jquery.min.js" type="text/javascript"></script> 
-<script type="text/javascript" charset="utf-8" src='js/sweet-justice.min.js'></script> 
+<meta http-equiv="Content-Language" content="en" />  <!-- JavaScript sugar --> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script> 
+<!-- <script type="text/javascript" charset="utf-8" src='http://github.com/aristus/sweet-justice/raw/master/sweet-justice.min.js'></script>  --> 
 <script src="/js/act.js"></script> 
  
  
 <!-- Atom news feed --> 
 <link rel="alternate" type="application/atom+xml" title="The Perl Oasis"
-      href="http://www.perloasis.info/opw2011/atom/en.xml" /><title>User information</title> 
+      href="http://www.perloasis.info/opw2011/atom/en.xml" /><title>Schedule</title> 
 <!-- CSS Stylesheets --> 
 <link rel="stylesheet" type="text/css" href="css/style.css" /> 
 <!-- Favorite icon --> 
 <link rel="shortcut icon" type="image/png" href="/favicon.png" /> 
-
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-939082-11']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script> 
 </head> 
  
 <body> 
@@ -26,344 +40,220 @@
         <h1><a href="http://www.perloasis.info/opw2011/">Perl Oasis 2011</a></h1> 
     </div> 
     <div class="page"> 
-        <div class="content sweet-justice">
-                <!-- The schedule table --> 
-                  <script type="text/javascript">
-                if (window.act) {
-                    var titles = [  'remove from personal schedule',  'add to personal schedule',  ];
-                    toggle_image = function(elem, talk_id, set) {
-                        var data = { img_name: set ? 'picked' : 'unpicked',
-                                     title:    titles[set ? 0 : 1 ],
-                                     talk_id:  talk_id,
-                                     set:      set
-                        };
-                        $(elem).replaceWith( act.template("tpl_mtbutton", data) );  $("#my-"+talk_id+"-text").replaceWith( act.template("tpl_mtlabel", data) );  };
-                    toggle_count = function(talk_id, set) {
-                        var elemcount = "#starcount-" + talk_id;
-                        $(elemcount).replaceWith(
-                            act.template("tpl_starcount",
-                                         { talk_id: talk_id,
-                                           count: (parseInt($(elemcount + " > .starcount").text()) || 0) + (set ? 1 : -1)
-                                         }
-                                        ));
-                    };
-                    toggle_talk = function(elem, talk_id, set) {
-                        $.post(act.make_uri('opw2009', 'updatemytalks_a'), {talk_id: talk_id} );
-                        toggle_image(elem, talk_id, !set);
-                        toggle_count(talk_id, !set);
-                    };
-                    $(function() {
-                        $(".mytalks_submit").remove();
-                        $(":checkbox").each(function() {
-                            toggle_image(this, $(this).val(), $(this).attr("checked"));
-                        });
-                    });
-                }
-                </script>
-
-                 <script type="text/html" id="tpl_mtbutton">
-                <img class="mtbutton" src="/images/<%=img_name%>.gif" title="<%=title%>"
-                     onClick ="toggle_talk(this,<%=talk_id%>,<%=set%>);" />
-
-                </script>
-
-                <script type="text/html" id="tpl_mtlabel">
-                <span id="my-<%=talk_id%>-text"><%=title%></span>
-                </script>
-
-                <script type="text/html" id="tpl_starcount">
-                <span id="starcount-<%=talk_id%>" style="white-space:nowrap"><% if (count) { %><span class="starcount"><%=count%></span><img style="vertical-align:middle" src="/images/picked.gif" /><% } %></span>
-                </script>
-                    <p> Talks in <b>bold type</b> have been confirmed by their respective speakers. </p>    <h2>Saturday, January 17, 2009</h2>
-                <table border="0">
-                <tr class="header">
-                  <th> Time </th>   <th colspan="1">Room 1</th>    <th colspan="1">Room 2</th>   
-                 </tr>  
-                 <table>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            09:30&nbsp;AM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top" class="r2">
-                            <a href="/opw2009/event/466"> Welcome </a> (10&nbsp;min) <span id="starcount-466" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            09:40&nbsp;AM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            09:55&nbsp;AM
-                        </td>
-                        <td valign="top" class="r1">
-                            <a href="/opw2009/user/1007">Jeff Bisbee ( biz )</a> - <a href="/opw2009/talk/1705"><b> The Dark Art of the Perl Command Line Interface </b></a> (20&nbsp;min) <span id="starcount-1705" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif"></span>
-                        </td>
-                        <td valign="top" class="r2">
-                            <a href="/opw2009/user/4808">Christian Brink ( grep )</a> - <a href="/opw2009/talk/1704"><b> Refactoring bad perl </b></a> (20&nbsp;min) <span id="starcount-1704" style="white-space:nowrap"><span class="starcount">2</span><img style="vertical-align:middle" src="/images/picked.gif"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            10:15&nbsp;AM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            10:30&nbsp;AM
-                        </td>
-                        <td valign="top" class="r1">
-                            <a href="/opw2009/user/983">Chris Prather ( perigrin )</a> - <a href="/opw2009/talk/1730"><b> XML::Toolkit - Tools to Ease the Pain </b></a> (40&nbsp;min) <span id="starcount-1730" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top" class="r2">
-                            <a href="/opw2009/user/2856">Jay Shirley</a> - <a href="/opw2009/talk/1691"><b> Catalyst &amp; Chained: Bondage for better applications </b></a> (40&nbsp;min) <span id="starcount-1691" style="white-space:nowrap"><span class="starcount">3</span><img style="vertical-align:middle" src="/images/picked.gif"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            11:10&nbsp;AM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            11:25&nbsp;AM
-                        </td>
-                        <td valign="top" class="r1">
-                            <a href="/opw2009/user/4841">Aaron Johnson</a> - <a href="/opw2009/talk/1729"><b> An Introduction to DBIx::Classs </b></a> (20&nbsp;min) <span id="starcount-1729" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif"></span>
-                        </td>
-                        <td valign="top" class="r2">
-                            <a href="/opw2009/user/4781">Mark Prather</a> - <a href="/opw2009/talk/1690"><b> Care and Feeding of your Geek </b></a> (20&nbsp;min) <span id="starcount-1690" style="white-space:nowrap"><span class="starcount">2</span><img style="vertical-align:middle" src="/images/picked.gif"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            11:45&nbsp;AM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            12:00&nbsp;PM
-                        </td>
-                        <td valign="top" class="out" colspan="2">
-                            <a href="/opw2009/event/465"> Lunch </a> (120&nbsp;min) <span id="starcount-465" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            02:00&nbsp;PM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            02:15&nbsp;PM
-                        </td>
-                        <td valign="top" class="r1">
-                            <a href="/opw2009/user/1505">Steven Lembark</a> - <a href="/opw2009/talk/1696"><b> Dependent queueing with Perl </b></a> (40&nbsp;min) <span id="starcount-1696" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top" class="r2">
-                            <a href="/opw2009/user/2163">Cory Watson ( gphat )</a> - <a href="/opw2009/talk/1702"><b> Moose for Managers </b></a> (40&nbsp;min) <span id="starcount-1702" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            02:55&nbsp;PM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            03:05&nbsp;PM
-                        </td>
-                        <td valign="top" class="r1">
-                            <a href="/opw2009/user/4806">Dylan Hardison</a> - <a href="/opw2009/talk/1703"><b> Objects in Lua </b></a> (20&nbsp;min) <span id="starcount-1703" style="white-space:nowrap"><span class="starcount">4</span><img style="vertical-align:middle" src="/images/picked.gif"></span>
-                        </td>
-                        <td valign="top" class="r2">
-                            <a href="/opw2009/user/2747">Mike Whitaker ( Penfold )</a> - <a href="/opw2009/talk/1701"><b> Building a Moose class on top of a DB row </b></a> (20&nbsp;min) <span id="starcount-1701" style="white-space:nowrap"><span class="starcount">2</span><img style="vertical-align:middle" src="/images/picked.gif"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            03:25&nbsp;PM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            03:40&nbsp;PM
-                        </td>
-                        <td valign="top" class="r1">
-                            <a href="/opw2009/user/1681">Jonathan Rockway ( jrockway )</a> - <a href="/opw2009/talk/1698"><b> Introducing KiokuDB </b></a> (20&nbsp;min) <span id="starcount-1698" style="white-space:nowrap"><span class="starcount">4</span><img style="vertical-align:middle" src="/images/picked.gif"></span>
-                        </td>
-                        <td valign="top" class="r2">
-                            <a href="/opw2009/user/2163">Cory Watson ( gphat )</a> - <a href="/opw2009/talk/1692"><b> DBIx::Class::QueryLog - Keeping a Lid on DBIx::Class </b></a> (20&nbsp;min) <span id="starcount-1692" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            04:00&nbsp;PM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            04:15&nbsp;PM
-                        </td>
-                        <td valign="top" class="r1">
-                            <a href="/opw2009/user/4708">Roy Johnson</a> - <a href="/opw2009/talk/1723"> [TBA] </a> (40&nbsp;min) <span id="starcount-1723" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            04:55&nbsp;PM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            05:10&nbsp;PM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top" class="r2">
-                            <a href="/opw2009/user/2747">Mike Whitaker ( Penfold )</a> - <a href="/opw2009/talk/1689"><b> KEYNOTE: Enlightened Perl: what is it, and why should I care? </b></a> (40&nbsp;min) <span id="starcount-1689" style="white-space:nowrap"><span class="starcount">5</span><img style="vertical-align:middle" src="/images/picked.gif"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            05:50&nbsp;PM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            07:00&nbsp;PM
-                        </td>
-                        <td valign="top" class="venue" colspan="2">
-                            <a href="/opw2009/event/467"> Workshop Party </a> (180&nbsp;min) <span id="starcount-467" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                    <tr class="header">
-                        <td align="center" valign="top" class="header">
-                            10:00&nbsp;PM
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                        <td valign="top">
-                            <span id="starcount-" style="white-space:nowrap"></span>
-                        </td>
-                    </tr>
-                </table>
-            </div> 
-            <div class="unit lastUnit"> 
-                <h2>
-                    Navigation
-                </h2>
-                <ul>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Location</a>
-                    </li>
-                    <li>
-                        <a href="#">Sponsors</a>
-                    </li>
-                    <li>
-                        <a href="#">Courses</a>
-                    </li>
-                    <li>
-                        <a href="#">FAQ</a>
-                    </li>
-                    <li>
-                        <a href="#">News</a>
-                    </li>
-                    <li>
-                        <a href="#">Wiki</a>
-                    </li>
-                </ul>
-                <h2>Presentations</h2>
-                <ul>
-                <li><a href="#">Schedule</a></li>
-                <li><a href="#">iCal export</a></li>
-                <li><a href="#">Submit a talk</a></li>
-                </ul>
-                <h2>Sponsors</h2>
-                <ul>
-                    <li><img src="img/tamarou.png"></li>
-                    <li><img src="img/tamarou.png"></li>
-                    <li><img src="img/tamarou.png" ></li>
-                </ul>
-            </div> 
-            <div class="footer"> 
-                <p style="font-size: 8pt; font-weight: 400;"> 
-                    Site Design by <a href="http://tamarou.com">Tamarou</a> &bull; Image by <a rel="cc:attributionURL" href="http://www.flickr.com/photos/lhutton/4743800369/">Leander Hutton</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a> 
-                </p> 
-            </div> 
-
-        </div> 
-    </body> 
-</html>
+        <div class="content sweet-justice"> <!-- The schedule table --> <script type="text/javascript"> 
+if (window.act) {
+    var titles = [  'remove from personal schedule',  'add to personal schedule',  ];
+    toggle_image = function(elem, talk_id, set) {
+        var data = { img_name: set ? 'picked' : 'unpicked',
+                     title:    titles[set ? 0 : 1 ],
+                     talk_id:  talk_id,
+                     set:      set
+        };
+        $(elem).replaceWith( act.template("tpl_mtbutton", data) );  $("#my-"+talk_id+"-text").replaceWith( act.template("tpl_mtlabel", data) );  };
+    toggle_count = function(talk_id, set) {
+        var elemcount = "#starcount-" + talk_id;
+        $(elemcount).replaceWith(
+            act.template("tpl_starcount",
+                         { talk_id: talk_id,
+                           count: (parseInt($(elemcount + " > .starcount").text()) || 0) + (set ? 1 : -1)
+                         }
+                        ));
+    };
+    toggle_talk = function(elem, talk_id, set) {
+        $.post(act.make_uri('opw2011', 'updatemytalks_a'), {talk_id: talk_id} );
+        toggle_image(elem, talk_id, !set);
+        toggle_count(talk_id, !set);
+    };
+    $(function() {
+        $(".mytalks_submit").remove();
+        $(":checkbox").each(function() {
+            toggle_image(this, $(this).val(), $(this).attr("checked"));
+        });
+    });
+}
+</script> 
+ 
+ <script type="text/html" id="tpl_mtbutton"> 
+<img class="mtbutton" src="/images/<%=img_name%>.gif" title="<%=title%>"
+     onClick ="toggle_talk(this,<%=talk_id%>,<%=set%>);" />
+</script> 
+ 
+<script type="text/html" id="tpl_mtlabel"> 
+<span id="my-<%=talk_id%>-text"><%=title%></span>
+</script> 
+ 
+<script type="text/html" id="tpl_starcount"> 
+<span id="starcount-<%=talk_id%>" style="white-space:nowrap"><% if (count) { %><span class="starcount"><%=count%></span><img style="vertical-align:middle" src="/images/picked.gif" /><% } %></span>
+</script> 
+    <p> Talks in <b>bold type</b> have been confirmed by their respective speakers. </p>  <a href="/opw2011/schedule?day=2011-01-14">Friday</a>   |   <strong>Saturday</strong>   |   <a href="/opw2011/schedule?day=2011-01-16">Sunday</a>      <form method="POST" action="/opw2011/updatemytalks" />   <h2>Saturday, 15 January 2011</h2> 
+<table border="0"> 
+<thead> 
+ <tr class="header"> 
+  <th> Time </th>   <th colspan="1">Room 1</th>    <th colspan="1">Room 2</th>    <th colspan="1">Room 3</th>   </tr> 
+</thead> 
+<tbody>  <tr class="header">   <td align="center" valign="top" class="header">09:00</td>    <td valign="top"  class="venue" colspan="3"> <a href="/opw2011/event/822">&lrm;Breakfast&lrm;</a> (90&nbsp;min) (<a href="/opw2011/editevent?event_id=822">edit</a>) <span id="starcount-822" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">10:30</td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">10:40</td>    <td valign="top"  class="r1">  <input type="checkbox"
+                       name="mt-3148"
+                       value="3148"  title = "add to personal schedule"  /> <a href="/opw2011/user/2885">Michael Accardo</a> - <a href="/opw2011/talk/3148"><b>&lrm;MozRepl and Perl: Manipulating Firefox from the inside out&lrm;</b></a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3148">edit</a>) <span id="starcount-3148" style="white-space:nowrap"><span class="starcount">2</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  class="r2">  <input type="checkbox"
+                       name="mt-3190"
+                       value="3190"  title = "add to personal schedule"  /> <a href="/opw2011/user/4809">Daniel LeWarne (&lrm;Possum&lrm;)</a> - <a href="/opw2011/talk/3190">&lrm;The Basics of Testing with Perl&lrm;</a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3190">edit</a>) <span id="starcount-3190" style="white-space:nowrap"><span class="starcount">2</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  class="r3">  <input type="checkbox"
+                       name="mt-3171"
+                       value="3171"  title = "add to personal schedule"  /> <a href="/opw2011/user/5208">Devin Austin (&lrm;dhoss&lrm;)</a> - <a href="/opw2011/talk/3171"><b>&lrm;Intro to Catalyst&lrm;</b></a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3171">edit</a>) <span id="starcount-3171" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">11:00</td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">11:10</td>    <td valign="top"  class="r1">  <input type="checkbox"
+                       name="mt-3142"
+                       value="3142"  title = "add to personal schedule"  /> <a href="/opw2011/user/3880">Stefan Hornburg (&lrm;racke&lrm;)</a> - <a href="/opw2011/talk/3142"><b>&lrm;Template::Zoom - Modern HTML and PDF Engine&lrm;</b></a> (40&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3142">edit</a>) <span id="starcount-3142" style="white-space:nowrap"><span class="starcount">2</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  class="r2">  <input type="checkbox"
+                       name="mt-3174"
+                       value="3174"  title = "add to personal schedule"  /> <a href="/opw2011/user/2795">Chris Nehren (&lrm;apeiron&lrm;)</a> - <a href="/opw2011/talk/3174"><b>&lrm;Unix Programming with Perl&lrm;</b></a> (40&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3174">edit</a>) <span id="starcount-3174" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  class="r3">  <input type="checkbox"
+                       name="mt-3187"
+                       value="3187"  title = "add to personal schedule"  /> <a href="/opw2011/user/1790">Brigham Johnson (&lrm;Brig&lrm;)</a> - <a href="/opw2011/talk/3187"><b>&lrm;Made for Perl:  Voice Tickets at Work&lrm;</b></a> (40&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3187">edit</a>) <span id="starcount-3187" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">11:50</td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">12:00</td>    <td valign="top"  class="r1">  <input type="checkbox"
+                       name="mt-3183"
+                       value="3183"  title = "add to personal schedule"  /> <a href="/opw2011/user/1857">Mark Keating (&lrm;mdk/markie&lrm;)</a> - <a href="/opw2011/talk/3183"><b>&lrm;I &lt;3 my Community&lrm;</b></a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3183">edit</a>) <span id="starcount-3183" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  class="r2">  <input type="checkbox"
+                       name="mt-3179"
+                       value="3179"  title = "add to personal schedule"  /> <a href="/opw2011/user/1929">Jim Martinez</a> - <a href="/opw2011/talk/3179">&lrm;6 years of web testing using Test::WWW::Mechanize&lrm;</a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3179">edit</a>) <span id="starcount-3179" style="white-space:nowrap"><span class="starcount">3</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  class="r3">  <input type="checkbox"
+                       name="mt-3189"
+                       value="3189"  title = "add to personal schedule"  /> <a href="/opw2011/user/6455">Rocco Caputo (&lrm;rcaputo&lrm;)</a> - <a href="/opw2011/talk/3189"><b>&lrm;Reflex - How Does It Work?!&lrm;</b></a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3189">edit</a>) <span id="starcount-3189" style="white-space:nowrap"><span class="starcount">4</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">12:20</td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">12:30</td>    <td valign="top"  class="out" colspan="3"> <a href="/opw2011/event/821">&lrm;Lunch&lrm;</a> (110&nbsp;min) (<a href="/opw2011/editevent?event_id=821">edit</a>) <span id="starcount-821" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">14:20</td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">14:30</td>    <td valign="top"  class="r1">  <input type="checkbox"
+                       name="mt-3193"
+                       value="3193"  title = "add to personal schedule"  /> <a href="/opw2011/user/159">Chip Salzenberg (&lrm;chip&lrm;)</a> - <a href="/opw2011/talk/3193">&lrm;Serving a Million Players with a Perl Game Server&lrm;</a> (40&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3193">edit</a>) <span id="starcount-3193" style="white-space:nowrap"><span class="starcount">3</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  class="r2">  <input type="checkbox"
+                       name="mt-3178"
+                       value="3178"  title = "add to personal schedule"  /> <a href="/opw2011/user/1719">Nicholas Perez (&lrm;nperez&lrm;)</a> - <a href="/opw2011/talk/3178"><b>&lrm;Improving your Reflexes&lrm;</b></a> (40&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3178">edit</a>) <span id="starcount-3178" style="white-space:nowrap"><span class="starcount">2</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  class="r3">  <input type="checkbox"
+                       name="mt-3175"
+                       value="3175"  title = "add to personal schedule"  /> <a href="/opw2011/user/2795">Chris Nehren (&lrm;apeiron&lrm;)</a> - <a href="/opw2011/talk/3175"><b>&lrm;Sending Email with Perl&lrm;</b></a> (40&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3175">edit</a>) <span id="starcount-3175" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">15:10</td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">15:20</td>    <td valign="top"  class="r1">  <input type="checkbox"
+                       name="mt-3172"
+                       value="3172"  title = "add to personal schedule"  /> <a href="/opw2011/user/4781">Mark Prather</a> - <a href="/opw2011/talk/3172"><b>&lrm;Marketing Perl&lrm;</b></a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3172">edit</a>) <span id="starcount-3172" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  class="r2">  <input type="checkbox"
+                       name="mt-3173"
+                       value="3173"  title = "add to personal schedule"  /> <a href="/opw2011/user/1650">Brock Wilcox (&lrm;awwaiid&lrm;)</a> - <a href="/opw2011/talk/3173">&lrm;Testing the Interactive Web: WWW::HtmlUnit Tutorial&lrm;</a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3173">edit</a>) <span id="starcount-3173" style="white-space:nowrap"><span class="starcount">3</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  class="r3">  <input type="checkbox"
+                       name="mt-3191"
+                       value="3191"  title = "add to personal schedule"  /> <a href="/opw2011/user/5208">Devin Austin (&lrm;dhoss&lrm;)</a> - <a href="/opw2011/talk/3191"><b>&lrm;Catalyst, REST, jQgrid and you&lrm;</b></a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3191">edit</a>) <span id="starcount-3191" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">15:40</td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">15:50</td>    <td valign="top"  class="r1">  <input type="checkbox"
+                       name="mt-3176"
+                       value="3176"  title = "add to personal schedule"  /> <a href="/opw2011/user/2163">Cory Watson (&lrm;gphat&lrm;)</a> - <a href="/opw2011/talk/3176">&lrm;How NOT to build a multi-million dollar eCommerce system&lrm;</a> (40&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3176">edit</a>) <span id="starcount-3176" style="white-space:nowrap"><span class="starcount">4</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  class="r2">  <input type="checkbox"
+                       name="mt-3177"
+                       value="3177"  title = "add to personal schedule"  /> <a href="/opw2011/user/2856">Jay Shirley (&lrm;jshirley&lrm;)</a> - <a href="/opw2011/talk/3177"><b>&lrm;Managing User Input Data with Data::Manager&lrm;</b></a> (40&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3177">edit</a>) <span id="starcount-3177" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  class="r3">  <input type="checkbox"
+                       name="mt-3185"
+                       value="3185"  title = "add to personal schedule"  /> <a href="/opw2011/user/1677">Robert Blackwell (&lrm;rblackwe&lrm;)</a> - <a href="/opw2011/talk/3185"><b>&lrm;Communicating with Perl and Arduino&lrm;</b></a> (40&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3185">edit</a>) <span id="starcount-3185" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">16:30</td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">16:40</td>    <td valign="top"  class="r1">  <input type="checkbox"
+                       name="mt-3192"
+                       value="3192"  title = "add to personal schedule"  /> <a href="/opw2011/user/5208">Devin Austin (&lrm;dhoss&lrm;)</a> - <a href="/opw2011/talk/3192"><b>&lrm;Rapid Prototyping with Form::Sensible::Reflector::DBIC&lrm;</b></a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3192">edit</a>) <span id="starcount-3192" style="white-space:nowrap"><span class="starcount">1</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  class="r2">  <input type="checkbox"
+                       name="mt-3202"
+                       value="3202"  title = "add to personal schedule"  /> <a href="/opw2011/user/4771">Jamie Moorehead</a> - <a href="/opw2011/talk/3202"><b>&lrm;Social Aspects of Perl Events&lrm;</b></a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3202">edit</a>) <span id="starcount-3202" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  class="r3">  <input type="checkbox"
+                       name="mt-3181"
+                       value="3181"  title = "add to personal schedule"  /> <a href="/opw2011/user/4806">Dylan Hardison</a> - <a href="/opw2011/talk/3181">&lrm;Managing assets: Keeping 7.5G of media files out of subversion&lrm;</a> (20&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3181">edit</a>) <span id="starcount-3181" style="white-space:nowrap"><span class="starcount">2</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">17:00</td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">17:10</td>    <td valign="top"  class="r1">  <input type="checkbox"
+                       name="mt-3194"
+                       value="3194"  title = "add to personal schedule"  /> <a href="/opw2011/user/983">Chris Prather (&lrm;perigrin&lrm;)</a> - <a href="/opw2011/talk/3194"><b>&lrm;Lightning Talks&lrm;</b></a> (30&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3194">edit</a>) <span id="starcount-3194" style="white-space:nowrap"><span class="starcount">6</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">17:40</td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">17:50</td>    <td valign="top"  class="r1">  <input type="checkbox"
+                       name="mt-3182"
+                       value="3182"  title = "add to personal schedule"  /> <a href="/opw2011/user/1797">Stevan Little (&lrm;stevan&lrm;)</a> - <a href="/opw2011/talk/3182"><b>&lrm;Getting Code for Free - A Love Letter to Open Source&lrm;</b></a> (40&nbsp;min) (<a href="/opw2011/edittalk?talk_id=3182">edit</a>) <span id="starcount-3182" style="white-space:nowrap"><span class="starcount">5</span><img style="vertical-align:middle" src="/images/picked.gif" /></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  <tr class="header">   <td align="center" valign="top" class="header">18:30</td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>    <td valign="top"  >   <span id="starcount-" style="white-space:nowrap"></span> 
+     </td>   </tr>  </tbody> 
+</table>  <input type="hidden" name="day" value="2011-01-15" /> 
+<input type="submit" class="mytalks_submit" value="Submit" /> 
+</form>     </div> 
+        <div class="unit lastUnit menu"> <!-- user menu -->  <li><h2> <a href="/opw2011/user/983">Logged as: perigrin</a> </h2></li> 
+ <li> <a href="/opw2011/logout">Logout</a> </li> 
+  <li> <a href="/opw2011/main">Edit profile</a> </li> 
+    <h2> Conference </h2> 
+<li> <a href="http://www.perloasis.info/opw2011/sponsorship.html">Call for Sponsors</a></li> 
+<li> <a href="http://www.perloasis.info/opw2011/call_for_speakers.html">Call for Speakers</a></li> 
+<li> <a href="http://www.perloasis.info/opw2011/venue.html">Venue</a></li> 
+<li> <a href="http://www.perloasis.info/opw2011/news">News</a> </li> 
+<li> <a href="http://www.perloasis.info/opw2011/wiki">Wiki</a> </li> 
+<li> <a href="http://www.perloasis.info/opw2011/training.html">Training</a> </li> <!-- users menu --> <li><h2> Users </h2></li> 
+ <li> <a href="/opw2011/search"> Search </a> </li> 
+ <li> <a href="/opw2011/stats"> Statistics </a> </li> 
+  <li> <a href="/opw2011/export"> CSV export </a> </li> 
+ <li> <a href="/opw2011/confirm_attend"> Confirm Attendance </a> </li> 
+ <li> <a href="/opw2011/create"> Register a new user </a> </li> 
+   <!-- talks menu --> <li><h2> <a href="/opw2011/talks"> Presentations </a> </h2></li> 
+ <li> <a href="/opw2011/favtalks"> Favorite Talks </a> </li> 
+   <li> <a href="/opw2011/schedule"> Schedule </a> </li> 
+ <li> <a href="/opw2011/timetable.ics"> iCal export </a> </li> 
+  <li> <a href="/opw2011/myschedule"> Personal Schedule </a> </li> 
+    <li> <a href="/opw2011/tracks"> Tracks </a> </li> 
+ <li> <a href="/opw2011/ical_import"> iCal import </a> </li> 
+ <li> <a href="/opw2011/export_talks"> CSV export </a> </li> 
+   <li> <a href="/opw2011/newtalk"> Submit a talk proposal </a> </li> 
+     <li><h2> <a href="/opw2011/events"> Events </a> </h2></li> 
+ <li> <a href="/opw2011/newevent"> Submit a new event </a> </li> 
+   <!-- money menu -->  <li><h2> Treasurer </h2></li> 
+ <li> <a href="/opw2011/payments">Payments</a> </li> 
+ <li> <a href="/opw2011/csv/payments">Payments (CSV)</a> </li> 
+ <li> <a href="/opw2011/csv/payment_items">Payment Details (CSV)</a> </li> 
+   <!-- admin menu -->  <li><h2> Admin </h2></li> 
+ <li> <a href="/opw2011/rights"> Rights management </a> </li> 
+    <h2> Sponsors </h2> 
+<li> <a href="http://shadowcat.co.uk"><img src="http://conferences.yapceurope.org/ye2010/images/logos/small/shadowcat.png"/></a></li> 
+<li> <a href="http://tamarou.com"><img src="/opw2011/img/tamarou.png"/></a></li> 
+<li> <a href="http://suncoastlug.org"><img src="/opw2011/img/slug-logo.png"/></a></li> 
+ <!--  <li><h2> <a href="http://act.mongueurs.net/conferences.html">Other conferences</a> </h2></li>
+  <li><a href="http://www.frozen-perl.org/mpw2011/">Frozen Perl 2011</a></li>
+  <li><a href="http://www.perlworkshop.nl/nlpw2011/">Dutch Perl Workshop 2011</a></li>
+  <li><a href="http://yapc2011.us/yn2011">YAPC::NA 2011</a></li>
+  <li><a href="http://conferences.yapceurope.org/ipw2011/">Italian Perl Workshop 2011</a></li>
+    --> 
+ 
+<div class="footer"> 
+    <p style="font-size: 8pt; font-weight: 400;"> <a
+    href="http://www.perloasis.info/opw2011/colophon.html">Colophon</a><br/> Site Design by <a
+    href="http://tamarou.com">Tamarou</a> &bull; Copyright &copy; The
+    Orlando Perl Mongers &bull; Powered by <a
+    href="http://act.mongueurs.net/">Act</a> </p> 
+</div> 
+</div> 
+    </div> 
+</body> 
+</html> 

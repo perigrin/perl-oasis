@@ -42,12 +42,12 @@ body {
     
     font-family: "JunctionRegular",sans-serif;
     font-size: 10pt;
-    line-height: 12pt;
+    line-height: 1.3;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
     padding: 0;
-    width: 1024px;
+    max-width: 1280px;
     min-height: 800px;
     overflow: auto;
     height: 100%;
@@ -56,9 +56,9 @@ body {
     
     
 }
-.header{width:800px;height:100px;margin-left:auto;margin-right:auto;}
+.header{max-width:800px;height:100px;margin-left:auto;margin-right:auto;}
 .page {
-    width: 800px;
+    max-width: 1024px;    
     height: 100%;
     margin: 1ex;
     padding: 0;
@@ -68,7 +68,7 @@ body {
     overflow: hidden;
     height: 100%;
     min-height: 800px;
-    border: 1px solid #402915;
+    border: 1px solid #402915;    
     -webkit-border-radius: 3ex;
     -moz-border-radius: 3ex;    
     filter: alpha(opacity=90);
@@ -93,6 +93,9 @@ h1, h1 a {
     -khtml-opacity: 0.9;
     opacity: 0.9;    
 }
+
+h1 a:hover { color: #F3DF7F; }
+
 h2,h2 a {
     font-size: 24pt;
     font-weight: 100;
@@ -115,13 +118,13 @@ ul { list-style: none;}
 .menu li { margin-top: 1ex; list-style: none;}
 .footer{font-family:"Helvetica",sans-serif;text-align:center;opacity:0.4;font-size:100%;}
 
-.content { width: 70ex; float:left; overflow: auto;}
+.content { width: 75%; padding: 1ex; float:left; overflow: auto;}
 
-table { width: 100%; }
+/*table { width: 65ex; }*/
 tr .header {  width: 20ex; }
-tr .r1 { width: 33.33333%;}
+tr .r1 { width: 20%;}
 
-tr .r1, tr .r2 {
+tr .r1, tr .r2, tr .r3, tr .r4, tr .out, tr .venue {
     background-color: #A6530A;
     padding: 1.5ex;
     -webkit-border-radius: 1ex;
