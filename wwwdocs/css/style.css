@@ -52,20 +52,18 @@ body {
     overflow: auto;
     height: 100%;
     -webkit-border-radius: 1ex;
-    -moz-border-radius: 1ex;    
-    
-    
+    -moz-border-radius: 1ex;       
 }
 .header{width:800px;height:100px;margin-left:auto;margin-right:auto;}
-.page {
-    width: 800px;
+.body {
+    width: 90%;
     height: 100%;
     margin: 1ex;
     padding: 0;
     background-color: #D9863D;
     margin-left: auto;
     margin-right: auto;
-    overflow: hidden;
+    overflow: auto;
     height: 100%;
     min-height: 800px;
     border: 1px solid #402915;
@@ -103,7 +101,7 @@ h2,h2 a {
     line-height: 120%;
     -webkit-text-stroke: 1px #402915;
     -moz-text-stroke: 1px #402915;
-    color: #BF622C;
+    color: #F3DF7F;
     margin: 0;
     margin-top: 0.5ex;
     text-transform: capitalize;
@@ -116,9 +114,10 @@ a:hover{color:#8C2A14; text-decoration: underline;}
 .unit{padding-left:3%;padding-right:3%;}
 ul { list-style: none;}
 .menu li { margin-top: 1ex; list-style: none;}
+.menu { overflow: none; }
 .footer{font-family:"Helvetica",sans-serif;text-align:center;opacity:0.4;font-size:100%;}
 
-.content { width: 70ex; padding: 1ex; float:left; overflow: auto;}
+.content {  width: 80ex; padding: 1ex; float:left; overflow: auto; }
 
 table { width: 99%; }
 tr .header {  width: 20ex; }

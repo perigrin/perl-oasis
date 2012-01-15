@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="[% global.request.language %]" xml:lang="[% global.request.language %]">
 
 <head>
@@ -28,7 +27,7 @@
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-939082-11']);
+  _gaq.push(['_setAccount', 'UA-939082-12']);
   _gaq.push(['_setDomainName', 'none']);
   _gaq.push(['_setAllowLinker', true]);
   _gaq.push(['_trackPageview']);
@@ -43,12 +42,10 @@
 </head>
 
 <body>
-    <div class="header">
-        <h1><a href="[% global.request.base_url %][% make_uri('') %]">Perl Oasis 2011</a></h1> 
-    </div> 
-    <div class="page">
-        <div class="content sweet-justice">[% content %]</div>
-        <div class="unit lastUnit menu"> [% PROCESS menu %]</div> 
+    <div class="masthead"><h1><a href="[% global.reqeust.base_url %][% make_uri('') %]">[% title %]</a></h1></div>
+    <div class="body">
+        <div class="unit size2of3"><div class="content">[% content %]</div></div>
+        <div class="menu unit lastUnit">[% PROCESS menu %]</div>
     </div>
 </body>
 </html>
