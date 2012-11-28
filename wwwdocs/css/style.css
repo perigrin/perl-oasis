@@ -37,9 +37,9 @@
 html{color:#402915;background-color:#82542B;overflow:auto;min-height:768px;}
 body {
     background-image: url('../img/palm_trees.jpg');
-    /*background-attachment: fixed;
+    background-attachment: fixed;
     background-position: 50% 25%;
-    background-repeat: none;*/
+    background-repeat: none;
     
     font-family: "JunctionRegular",sans-serif;
     font-size: 10pt;
