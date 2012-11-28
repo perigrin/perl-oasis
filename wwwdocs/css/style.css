@@ -19,6 +19,7 @@
 @media screen and (max-width: 319px) {.unit{float: none !important; width: auto !important;}}
 .line:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 .lastUnit:after{content:" . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";visibility:hidden;clear:both;height:0 !important;display:block;line-height:0;}
+/* " */
 .line{*zoom:1;}
 .unit{float:left;}
 .size1of1{float:none;width:100%;}
@@ -32,13 +33,13 @@
 .size3of5{width:60%;}
 .size4of5{width:80%;}
 .lastUnit{display:table-cell;*display:block;*zoom:1;float:none;_position:relative;_left:-3px;_margin-right:-3px;width:auto;}
-/* ***** main styles ******** */
-html{color:#402915;background-color:#402915;overflow:auto;min-height:768px;}
+/* ***** main styles ******** */ 
+html{color:#402915;background-color:#82542B;overflow:auto;min-height:768px;}
 body {
     background-image: url('../img/palm_trees.jpg');
-    background-attachment: fixed;
+    /*background-attachment: fixed;
     background-position: 50% 25%;
-    background-repeat: none;
+    background-repeat: none;*/
     
     font-family: "JunctionRegular",sans-serif;
     font-size: 10pt;
@@ -53,14 +54,17 @@ body {
     height: 100%;
     -webkit-border-radius: 1ex;
     -moz-border-radius: 1ex;       
+    box-shadow: rgba(51, 51, 51, 0.9) 0px 0px 10px;
+    -webkit-box-shadow: rgba(51, 51, 51, 0.9) 0px 0px 10px;
+    -moz-box-shadow: rgba(51, 51, 51, 0.9) 0px 0px 10px;
 }
 .header{width:800px;height:100px;margin-left:auto;margin-right:auto;}
 .body {
-    width: 90%;
+    width: 95%;
     height: 100%;
     margin: 1ex;
     padding: 0;
-    background-color: #D9863D;
+    background-color: #CE9059;
     margin-left: auto;
     margin-right: auto;
     overflow: auto;
@@ -69,30 +73,32 @@ body {
     border: 1px solid #402915;
     -webkit-border-radius: 3ex;
     -moz-border-radius: 3ex;    
-    filter: alpha(opacity=90);
-    -moz-opacity: 0.9;
-    -khtml-opacity: 0.9;
-    opacity: 0.9;
+    filter: alpha(opacity=85);
+    -moz-opacity: 0.85;
+    -khtml-opacity: 0.85;
+    opacity: 0.85;
 }
 h1, h1 a {
-    margin: 0px;
     padding: 0px;
+    margin: 0px;
+    margin-left: 3px;
     font-size: 52pt;
+    text-align: center;
     vertical-align: bottom;
     height: 100px;
-    display: table-cell;
+    /* display: table-cell; */
     font-family: ChunkFive,serif;
     font-weight: 200;
     -webkit-text-stroke: 1px #402915;
     -moz-text-stroke: 1px #402915;
-    color: #F3DF7F;
+    color: #7CC8C7;
     filter: alpha(opacity=90);
     -moz-opacity: 0.9;
     -khtml-opacity: 0.9;
     opacity: 0.9;    
 }
 
-h1 a:hover { color: #F3DF7F; }
+h1 a:hover { color: #7CC8C7; }
 
 h2,h2 a {
     font-size: 24pt;
@@ -101,7 +107,7 @@ h2,h2 a {
     line-height: 120%;
     -webkit-text-stroke: 1px #402915;
     -moz-text-stroke: 1px #402915;
-    color: #F3DF7F;
+    color: #7CC8C7;
     margin: 0;
     margin-top: 0.5ex;
     text-transform: capitalize;
@@ -117,7 +123,7 @@ ul { list-style: none;}
 .menu { overflow: none; }
 .footer{font-family:"Helvetica",sans-serif;text-align:center;opacity:0.4;font-size:100%;}
 
-.content {  width: 80ex; padding: 1ex; float:left; overflow: auto; }
+.content {  width: 70ex; padding: 1ex; float:left; overflow: auto; }
 
 table { width: 99%; }
 tr .header {  width: 20ex; }
